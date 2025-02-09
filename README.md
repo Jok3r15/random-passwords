@@ -3,9 +3,12 @@ Overview:
 The generate_password function generates a secure, random password containing uppercase and lowercase letters, digits, and special symbols. It leverages Python's built-in random and string modules to create a password of a specified length.
 
 Requirements:
+
 Python 3.x
 random and string modules (both are part of Python’s standard library)
+
 Functions:
+
 generate_password(length=12)
 Generates a random password of a specified length using letters, numbers, and special characters.
 
@@ -17,6 +20,7 @@ Returns:
 str: A randomly generated password containing letters (uppercase and lowercase), numbers, and special characters.
 
 How It Works:
+
 Character Set: The function combines three sets of characters:
 Letters (both uppercase and lowercase).
 Digits (0-9).
