@@ -1,8 +1,8 @@
+import argparse
 import random
 import string
 
-
-def generate_password(length=12):
+def generate_password(length):
     # Define the characters that can be used in the password
     all_characters = string.ascii_letters + string.digits + string.punctuation
 
@@ -11,7 +11,20 @@ def generate_password(length=12):
 
     return password
 
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Generate a secure random password.")
+    parser.add_argument("--length", type=int, help="Length of the password")
 
-# Example usage
-password = generate_password(16)
-print(f"Generated password: {password}")
+    args = parser.parse_args()
+
+    # If the length argument is not provided, ask the user to input it
+    if args.length is None:
+        length = int(input("Please enter the desired password length: "))
+    else:
+        length = args.length
+
+    password = generate_password(length)
+    print(f"Generated password: {password}")
+
+# Example execution
+# python "C:\Users\Gabriel_Gomez3\PycharmProjects\API Request to Gitlab\main.py" --length 16
